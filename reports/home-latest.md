@@ -1,21 +1,13 @@
 # 전세 안전진단 리포트 — 서울 마포구 성산동 200-1
 
-- 생성시각: 2026-08-19T07:10:29+09:00
+- 생성시각: 2026-08-20T07:13:16+09:00
 - 데이터 출처: 국토교통부 실거래가 공개시스템, 건축물대장 표제부(공공데이터포털 15134735), 카카오 로컬 지오코딩 — k-skill-proxy 경유
 
 ## 요약
 
 검토 신호 1건 (warn 0건 / info 1건), 확인 불가 섹션 1건.
 
-- 확인 불가 — 건축물대장(building): HTTP 503: <?xml version="1.0" encoding="UTF-8"?>
-<OpenAPI_ServiceResponse>
-<cmmMsgHeader>
-  <errMsg>SERVICETIMEOUT_ERROR</errMsg>
-  <returnAuthMsg>서비스 연결실패 에러</returnAuthMsg>
-  <returnReasonCode>05</returnReasonCode>
-</cmmMsgHeader>
-</OpenAPI_ServiceResponse>
-
+- 확인 불가 — 건축물대장(building): 네트워크 오류: <urlopen error timed out>
 
 ## 확인된 사실
 
@@ -33,15 +25,7 @@
 ## 검토 신호
 
 - **[info] 일부 데이터 섹션 확인 불가** (`section_unavailable`)
-  - 근거: 확인 불가 섹션 1개 — building: HTTP 503: <?xml version="1.0" encoding="UTF-8"?>
-<OpenAPI_ServiceResponse>
-<cmmMsgHeader>
-  <errMsg>SERVICETIMEOUT_ERROR</errMsg>
-  <returnAuthMsg>서비스 연결실패 에러</returnAuthMsg>
-  <returnReasonCode>05</returnReasonCode>
-</cmmMsgHeader>
-</OpenAPI_ServiceResponse>
-
+  - 근거: 확인 불가 섹션 1개 — building: 네트워크 오류: <urlopen error timed out>
 
 ## 직접 확인 체크리스트 (자동 조회 불가 — 계약 전 반드시 직접 확인)
 
