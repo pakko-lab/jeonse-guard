@@ -1,13 +1,21 @@
 # 전세 안전진단 리포트 — 서울 마포구 성산동 200-1
 
-- 생성시각: 2026-10-03T09:56:26+09:00
+- 생성시각: 2026-10-04T09:19:36+09:00
 - 데이터 출처: 국토교통부 실거래가 공개시스템, 건축물대장 표제부(공공데이터포털 15134735), 카카오 로컬 지오코딩 — k-skill-proxy 경유
 
 ## 요약
 
 검토 신호 2건 (warn 0건 / info 2건), 확인 불가 섹션 3건.
 
-- 확인 불가 — 건축물대장(building): 네트워크 오류: <urlopen error timed out>
+- 확인 불가 — 건축물대장(building): HTTP 503: <?xml version="1.0" encoding="UTF-8"?>
+<OpenAPI_ServiceResponse>
+<cmmMsgHeader>
+  <errMsg>SERVICETIMEOUT_ERROR</errMsg>
+  <returnAuthMsg>서비스 연결실패 에러</returnAuthMsg>
+  <returnReasonCode>05</returnReasonCode>
+</cmmMsgHeader>
+</OpenAPI_ServiceResponse>
+
 - 확인 불가 — 매매 실거래(trades): 실거래 trade 조회 전체 실패: 12개월 모두 실패 (202610, 202609, 202608, 202607, 202606, 202605, 202604, 202603, 202602, 202601, 202512, 202511)
 - 확인 불가 — 전월세 실거래(rents): 실거래 rent 조회 전체 실패: 12개월 모두 실패 (202610, 202609, 202608, 202607, 202606, 202605, 202604, 202603, 202602, 202601, 202512, 202511)
 
@@ -29,7 +37,15 @@
 - **[info] 매매 실거래 표본 부족** (`no_price_reference`)
   - 근거: 매매 실거래 표본 0건 (지역구, 최근 12개월 조회)
 - **[info] 일부 데이터 섹션 확인 불가** (`section_unavailable`)
-  - 근거: 확인 불가 섹션 3개 — building: 네트워크 오류: <urlopen error timed out> / trades: 실거래 trade 조회 전체 실패: 12개월 모두 실패 (202610, 202609, 202608, 202607, 202606, 202605, 202604, 202603, 202602, 202601, 202512, 202511) / rents: 실거래 rent 조회 전체 실패: 12개월 모두 실패 (202610, 202609, 202608, 202607, 202606, 202605, 202604, 202603, 202602, 202601, 202512, 202511)
+  - 근거: 확인 불가 섹션 3개 — building: HTTP 503: <?xml version="1.0" encoding="UTF-8"?>
+<OpenAPI_ServiceResponse>
+<cmmMsgHeader>
+  <errMsg>SERVICETIMEOUT_ERROR</errMsg>
+  <returnAuthMsg>서비스 연결실패 에러</returnAuthMsg>
+  <returnReasonCode>05</returnReasonCode>
+</cmmMsgHeader>
+</OpenAPI_ServiceResponse>
+ / trades: 실거래 trade 조회 전체 실패: 12개월 모두 실패 (202610, 202609, 202608, 202607, 202606, 202605, 202604, 202603, 202602, 202601, 202512, 202511) / rents: 실거래 rent 조회 전체 실패: 12개월 모두 실패 (202610, 202609, 202608, 202607, 202606, 202605, 202604, 202603, 202602, 202601, 202512, 202511)
 
 ## 직접 확인 체크리스트 (자동 조회 불가 — 계약 전 반드시 직접 확인)
 
